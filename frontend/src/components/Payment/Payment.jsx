@@ -319,9 +319,7 @@ const Payment = () => {
     <>
     <Container maxWidth="sm">
       <Box sx={{ mt: 4, textAlign: "center" }}>
-        <Typography variant="h4" gutterBottom>
-          Image Classifier
-        </Typography>
+       
         <video ref={videoRef} autoPlay muted width="640" height="480"></video>
         <canvas
           ref={canvasRef}

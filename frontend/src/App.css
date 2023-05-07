@@ -71,3 +71,8 @@ input[type=number] {
     background-size: cover;
     height: 90vh;
 }
+
+.bg-\[\#0b0b0b\] {
+  --tw-bg-opacity: 1;
+  background-color: white!important;
+}
