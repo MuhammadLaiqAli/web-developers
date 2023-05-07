@@ -132,6 +132,15 @@ const Login = () => {
               <Link to="/sign-up" className="text-blue-600 pl-2">
                 Sign Up
               </Link>
+
+            </div>
+
+            <div className={`${styles.noramlFlex} w-full`}>
+              <h4>Are you an admin?</h4>
+              <Link to="/shop-login" className="text-blue-600 pl-2">
+                Sign In
+              </Link>
+              
             </div>
           </form>
         </div>

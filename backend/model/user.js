@@ -56,6 +56,11 @@ const userSchema = new mongoose.Schema({
  },
  resetPasswordToken: String,
  resetPasswordTime: Date,
+
+ DOB:{
+  type: Date,
+  required : true
+ }
 });
 
 

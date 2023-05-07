@@ -7,6 +7,8 @@ import { useEffect } from "react";
 import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
+import ImageClassifier from "./imageDetector";
+
 
 const Checkout = () => {
   const { user } = useSelector((state) => state.user);
@@ -103,6 +105,8 @@ const Checkout = () => {
   console.log(discountPercentenge);
 
   return (
+    <>
+
     <div className="w-full flex flex-col items-center py-8">
       <div className="w-[90%] 1000px:w-[70%] block 800px:flex">
         <div className="w-full 800px:w-[65%]">
@@ -141,6 +145,7 @@ const Checkout = () => {
         <h5 className="text-white">Go to Payment</h5>
       </div>
     </div>
+    </>
   );
 };
 

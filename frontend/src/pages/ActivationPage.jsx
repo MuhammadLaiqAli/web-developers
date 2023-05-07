@@ -34,12 +34,20 @@ const ActivationPage = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        
       }}
     >
       {error ? (
-        <p>Your token is expired!</p>
+        <>
+        <p>Your token is expired!</p><br></br>&ensp;
+        <button><a href="/" style={{color : "blue"}}>Go to HomePage</a></button>
+        </>
       ) : (
-        <p>Your account has been created suceessfully!</p>
+        <>
+        <p>Your account has been created suceessfully!</p>&ensp;
+        <button><a href="/" style={{color : "blue"}}>Go to HomePage</a></button>
+        </>
+        
       )}
     </div>
   );

@@ -42,3 +42,32 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+.all-aaa{
+  position: absolute;
+  top: 0%;
+  left: 16%;
+  z-index: 2222222222222222;
+  width: 79%;
+}
+
+
+.img-aa{
+  width:45%!important;
+}
+
+
+.mlllb{
+  margin-left: 3% !important ;
+  color: white !important;
+}
+
+.mlllb h1, .mlllb p{
+  color: white !important;
+}
+
+.hero-img-aaa{
+  background-position: center !important;
+    background-size: cover;
+    height: 90vh;
+}

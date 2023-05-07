@@ -13,7 +13,7 @@ const Singup = () => {
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
-
+  const [DOB, setDOB] = useState(null);
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     setAvatar(file);
@@ -29,6 +29,7 @@ const Singup = () => {
     newForm.append("name", name);
     newForm.append("email", email);
     newForm.append("password", password);
+    newForm.append("DOB", DOB);
 
     axios
       .post(`${server}/user/create-user`, newForm, config)
@@ -38,6 +39,7 @@ const Singup = () => {
         setEmail("");
         setPassword("");
         setAvatar();
+        setDOB("");
       })
       .catch((error) => {
         toast.error(error.response.data.message);
@@ -89,6 +91,26 @@ const Singup = () => {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Date Of Birth
+              </label>
+              <div className="mt-1">
+                <input
+                  type="date"
+                  name="date"
+                  
+                  required
+                  value={DOB}
+                  onChange={(e) => setDOB(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
               </div>
@@ -174,6 +196,13 @@ const Singup = () => {
               <Link to="/login" className="text-blue-600 pl-2">
                 Sign In
               </Link>
+            </div>
+            <div className={`${styles.noramlFlex} w-full`}>
+              <h4>Are you an admin?</h4>
+              <Link to="/shop-login" className="text-blue-600 pl-2">
+                Sign In
+              </Link>
+              
             </div>
           </form>
         </div>

@@ -60,7 +60,8 @@ import axios from "axios";
 import { server } from "./server";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-
+import AllUsers from "./components/Admin/AllUsers";
+import DashboardSideBar from "./components/Shop/Layout/DashboardSideBar";
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
 
@@ -118,6 +119,9 @@ const App = () => {
           }
         />
         <Route path="/order/success" element={<OrderSuccessPage />} />
+
+        <Route path="/all-user" element={<><DashboardSideBar/><AllUsers /></>} />
+
         <Route
           path="/profile"
           element={

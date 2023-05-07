@@ -13,7 +13,7 @@ const { isAuthenticated, isAdmin } = require("../middleware/auth");
 
 router.post("/create-user", upload.single("file"), async (req, res, next) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, DOB } = req.body;
     const userEmail = await User.findOne({ email });
 
     if (userEmail) {
@@ -36,6 +36,7 @@ router.post("/create-user", upload.single("file"), async (req, res, next) => {
       email: email,
       password: password,
       avatar: fileUrl,
+      DOB: DOB
     };
 
     const activationToken = createActivationToken(user);
@@ -82,7 +83,7 @@ router.post(
       if (!newUser) {
         return next(new ErrorHandler("Invalid token", 400));
       }
-      const { name, email, password, avatar } = newUser;
+      const { name, email, password, avatar ,DOB} = newUser;
 
       let user = await User.findOne({ email });
 
@@ -94,6 +95,7 @@ router.post(
         email,
         avatar,
         password,
+        DOB
       });
 
       sendToken(user, 201, res);
@@ -365,8 +367,6 @@ router.get(
 // all users --- for admin
 router.get(
   "/admin-all-users",
-  isAuthenticated,
-  isAdmin("Admin"),
   catchAsyncErrors(async (req, res, next) => {
     try {
       const users = await User.find().sort({
@@ -385,8 +385,7 @@ router.get(
 // delete users --- admin
 router.delete(
   "/delete-user/:id",
-  isAuthenticated,
-  isAdmin("Admin"),
+
   catchAsyncErrors(async (req, res, next) => {
     try {
       const user = await User.findById(req.params.id);

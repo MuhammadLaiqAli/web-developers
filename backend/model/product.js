@@ -71,6 +71,12 @@ const productSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
+   
+  agelimit:{
+    type: Number,
+    required: true
+  }
+
 });
 
 module.exports = mongoose.model("Product", productSchema);

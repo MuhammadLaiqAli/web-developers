@@ -20,6 +20,7 @@ const CreateProduct = () => {
   const [originalPrice, setOriginalPrice] = useState();
   const [discountPrice, setDiscountPrice] = useState();
   const [stock, setStock] = useState();
+  const [agelimit, setagelimit] = useState();
 
   useEffect(() => {
     if (error) {
@@ -57,6 +58,7 @@ const CreateProduct = () => {
     newForm.append("discountPrice", discountPrice);
     newForm.append("stock", stock);
     newForm.append("shopId", seller._id);
+    newForm.append("agelimit", agelimit)
     dispatch(createProduct(newForm));
   };
 
@@ -125,6 +127,18 @@ const CreateProduct = () => {
             className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
             onChange={(e) => setTags(e.target.value)}
             placeholder="Enter your product tags..."
+          />
+        </div>
+        <br />
+        <div>
+          <label className="pb-2">Age Limit</label>
+          <input
+            type="number"
+            name="agelimit"
+            value={agelimit}
+            className="mt-2 appearance-none block w-full px-3 h-[35px] border border-gray-300 rounded-[3px] placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+            onChange={(e) => setagelimit(e.target.value)}
+            placeholder="Enter your product age limit..."
           />
         </div>
         <br />
