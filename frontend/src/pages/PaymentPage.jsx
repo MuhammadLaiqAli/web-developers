@@ -6,7 +6,7 @@ import Payment from "../components/Payment/Payment";
 
 const PaymentPage = () => {
   return (
-    <div className='w-full min-h-screen bg-[#f6f9fc]'>
+    <div className='w-full min-h-screen bg-[#0b0b0b]'>
        <Header />
        <br />
        <br />
