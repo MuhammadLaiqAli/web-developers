@@ -427,7 +427,7 @@ const SellerInbox = ({
             placeholder="Enter your message..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
-            className={`${styles.input}`}
+            className={`${styles.input} cb`}
           />
           <input type="submit" value="Send" className="hidden" id="send" />
           <label htmlFor="send">
